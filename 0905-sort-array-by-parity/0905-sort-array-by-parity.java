@@ -8,13 +8,12 @@ class Solution {
                 nums[l]=nums[r];
                 nums[r]=temp;
             }
-            if (nums[l]%2==0){
+            else if (nums[l]%2==0){
                 l++;
             }
             else{
                 r--;
             }
-            
         }
         return nums;
     }
