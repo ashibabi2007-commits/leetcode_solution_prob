@@ -1,11 +1,15 @@
 class Solution {
     public int[] searchRange(int[] nums, int target) {
-        int left = 0;
-        int right = nums.length - 1;
+
         int[] arr = {-1, -1};
 
+        int left = 0;
+        int right = nums.length - 1;
+
+        // Find first position
         while (left <= right) {
-            int mid = (left + right) / 2;
+
+            int mid = left + (right - left) / 2;
 
             if (nums[mid] == target) {
                 arr[0] = mid;
@@ -22,8 +26,10 @@ class Solution {
         left = 0;
         right = nums.length - 1;
 
+        // Find last position
         while (left <= right) {
-            int mid = (left + right) / 2;
+
+            int mid = left + (right - left) / 2;
 
             if (nums[mid] == target) {
                 arr[1] = mid;
