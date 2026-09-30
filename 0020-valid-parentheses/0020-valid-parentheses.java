@@ -1,28 +1,24 @@
 class Solution {
     public boolean isValid(String s) {
-        char[] arr = new char[s.length()];
-        int k = 0;
-
+        Stack<Character> list = new Stack<>();
         for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
 
             if (ch == '(') {
-                arr[k] = ')';
-                k++;
-            } else if (ch == '{') {
-                arr[k] = '}';
-                k++;
-            } else if (ch == '[') {
-                arr[k] = ']';
-                k++;
-            } else {
-                if (k == 0 || arr[k - 1] != ch) {
-                    return false;
-                }
-                k--;
+                list.push(')');
+            }
+            else if (ch == '{') {
+                list.push('}');
+            }
+            else if (ch == '[') {
+                list.push(']');
+            }
+            else if (list.isEmpty() || list.pop() != ch) {
+                return false;
             }
         }
 
-        return k == 0;
+        return list.isEmpty();
+
     }
 }
