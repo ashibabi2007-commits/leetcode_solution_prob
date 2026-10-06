@@ -1,15 +1,11 @@
 class Solution {
     public boolean containsDuplicate(int[] nums) {
-        Arrays.sort(nums);
-        int left=0;
-        int right=1;
-        while(right<nums.length){
-            if(nums[left]==nums[right]){
+        HashMap<Integer,Integer> map=new HashMap<>();
+        for(int i:nums){
+            if (map.containsKey(i)){
                 return true;
             }
-            left++;
-            right++;
-
+            map.put(i,1);
         }
         return false;
     }
