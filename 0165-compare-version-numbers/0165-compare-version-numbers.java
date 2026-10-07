@@ -1,15 +1,15 @@
 class Solution {
     public int compareVersion(String version1, String version2) {
-        final String[] levels1=version1.split("\\.");
-        final String[] levels2=version2.split("\\.");
-        final int length=Math.max(levels1.length,levels2.length);
+        String[] levels1=version1.split("\\.");
+        String[] levels2=version2.split("\\.");
+        int length=Math.max(version1.length(),version2.length());
         for(int i=0;i<length;++i){
-            final Integer v1=i<levels1.length ?Integer.parseInt(levels1[i]):0;
-            final Integer v2=i<levels2.length ?Integer.parseInt(levels2[i]):0;
-            if(v1>v2){
+            int v1=(i<levels1.length)?Integer.parseInt(levels1[i]):0;
+            int v2= i<levels2.length?Integer.parseInt(levels2[i]):0;
+            if (v1>v2){
                 return 1;
             }
-            else if (v1<v2){
+            else if(v1<v2){
                 return -1;
             }
         }
