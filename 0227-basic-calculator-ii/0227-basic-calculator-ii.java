@@ -8,27 +8,28 @@ class Solution {
             if(Character.isDigit(c)){
                 num=num*10+(c-'0');
             }
-            if((!Character.isDigit(c) && c!=' ') || (i==s.length()-1)){
+            if(!Character.isDigit(c) && c!=' ' || i==s.length()-1){
                 if (operation=='+'){
                     Stack.push(num);
                 }
-                if (operation=='-'){
+                else if (operation=='-'){
                     Stack.push(-num);
                 }
-                if (operation=='*'){
+                else if (operation=='*'){
                     Stack.push(Stack.pop()*num);
                 }
-                if (operation=='/'){
+                else if (operation=='/'){
                     Stack.push(Stack.pop()/num);
                 }
-                num=0;
                 operation=c;
+                num=0; 
             }
-        
+            
         }
         int result=0;
         for(int x:Stack){
             result+=x;
+            
         }
         return result;
     }
