@@ -4,7 +4,7 @@ class Solution {
         String[] symbols={"M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"};
         String result="";
         for(int i=0;i<values.length;i++){
-            while (num>=values[i]){
+            while(num>=values[i]){
                 result+=symbols[i];
                 num=num-values[i];
             }
