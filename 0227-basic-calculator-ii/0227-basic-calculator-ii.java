@@ -24,7 +24,6 @@ class Solution {
                 operation=c;
                 num=0; 
             }
-            
         }
         int result=0;
         for(int x:Stack){
