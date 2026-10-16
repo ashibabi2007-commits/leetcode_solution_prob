@@ -9,11 +9,9 @@ class Solution {
             }
         }
         for(int i=0;i<n;i++){
-        
             int left=0;
             int right=n-1;
             while(left<right){
-                
                 int temp=matrix[i][left];
                 matrix[i][left]=matrix[i][right];
                 matrix[i][right]=temp;
