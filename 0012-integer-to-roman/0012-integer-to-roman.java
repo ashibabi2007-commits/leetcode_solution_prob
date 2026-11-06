@@ -5,7 +5,7 @@ class Solution {
         String result="";
         for(int i=0;i<values.length;i++){
             while(num>=values[i]){
-                result+=symbols[i];
+                result=result+symbols[i];
                 num=num-values[i];
             }
         }
