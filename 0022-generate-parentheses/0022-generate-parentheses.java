@@ -5,7 +5,7 @@ class Solution {
         
         return result;
     }
-    String result="";
+    
     public void generate(String s, int open, int close,int n,List<String> result){
         if (s.length()==2*n){
             result.add(s);
