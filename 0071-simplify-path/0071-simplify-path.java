@@ -3,7 +3,7 @@ class Solution {
         Stack<String> stack=new Stack<>();
         String[] parts=path.split("/");
         for(String part:parts){
-            if(part.equals("")|part.equals(".")){
+            if((part.equals(""))||(part.equals("."))){
                 continue;
             }
             if(part.equals("..")){
@@ -16,9 +16,9 @@ class Solution {
             }
         }
         StringBuilder result=new StringBuilder();
-        for(String i:stack){
-            result.append("/").append(i);
+        for(String dir:stack){
+            result=result.append("/").append(dir);
         }
         return result.length()==0?"/":result.toString();
-}
+    }
 }
