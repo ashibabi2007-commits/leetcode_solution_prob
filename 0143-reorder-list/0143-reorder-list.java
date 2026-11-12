@@ -12,18 +12,20 @@ class Solution {
         ListNode curr=slow.next;
         slow.next=null;
         while(curr!=null){
-            ListNode nexttemp=curr.next;
+            ListNode temp=curr.next;
             curr.next=prev;
             prev=curr;
-            curr=nexttemp;
+            curr=temp;
         }
         ListNode first=head;
         ListNode second=prev;
-        while (second!=null){
+        while(second!=null){
             ListNode temp1=first.next;
             ListNode temp2=second.next;
+
             first.next=second;
             second.next=temp1;
+
             first=temp1;
             second=temp2;
         }
