@@ -1,9 +1,9 @@
 class Solution {
     public String longestPalindrome(String s) {
+        String ans="";
         if(s.length()<2){
             return s;
         }
-        String ans="";
         for(int i=0;i<s.length();i++){
             String odd=expand(s,i,i);
             String even=expand(s,i,i+1);
