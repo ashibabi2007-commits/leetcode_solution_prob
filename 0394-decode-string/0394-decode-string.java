@@ -18,11 +18,11 @@ class Solution {
             else if(c==']'){
                 int z=count.pop();
                 String prev=String.pop();
-                StringBuilder temp=new StringBuilder(prev);
+                String temp=prev;
                 for(int j=0;j<z;j++){
-                    temp.append(result);
+                    temp+=result;
                 }
-                result=temp.toString();
+                result=temp;
             }
             else {
                 result+=c;
