@@ -3,30 +3,31 @@ class Solution {
         Stack<Integer> count=new Stack<>();
         Stack<String> String = new Stack<>();
         int num=0;
-        String current="";
-        for (char c:s.toCharArray()){
+        String result="";
+        for(int i=0;i<s.length();i++){
+            char c=s.charAt(i);
             if (Character.isDigit(c)){
                 num=num*10+(c-'0');
             }
             else if (c=='['){
                 count.push(num);
-                String.push(current);
+                String.push(result);
                 num=0;
-                current="";
+                result="";
             }
             else if(c==']'){
                 int z=count.pop();
                 String prev=String.pop();
                 StringBuilder temp=new StringBuilder(prev);
-                for(int i=0;i<z;i++){
-                    temp.append(current);
+                for(int j=0;j<z;j++){
+                    temp.append(result);
                 }
-                current=temp.toString();
+                result=temp.toString();
             }
             else {
-                current+=c;
+                result+=c;
             }
         }
-        return current;
+        return result;
     }
 }
