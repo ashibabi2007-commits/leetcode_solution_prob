@@ -1,8 +1,7 @@
 import java.util.NoSuchElementException;
 class NestedIterator implements Iterator<Integer> {
-    private final Stack<NestedInteger> stack;
+    private final Stack<NestedInteger> stack=new Stack<>();
     public NestedIterator(List<NestedInteger> nestedList) {
-        stack = new Stack<>();
         for (int i = nestedList.size() - 1; i >= 0; i--) {
             stack.push(nestedList.get(i));
         }
