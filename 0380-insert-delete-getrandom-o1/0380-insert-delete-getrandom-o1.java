@@ -1,7 +1,3 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 class RandomizedSet {
     private final List<Integer> list;
     private final Map<Integer, Integer> map;
