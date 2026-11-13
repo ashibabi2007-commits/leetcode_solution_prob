@@ -1,48 +1,53 @@
 class MyCircularQueue {
-    private final int[] queue;
-    private int front;
+    private int[] data;
+    private int head;
+    private int capacity;
     private int size;
-    private final int capacity;
     public MyCircularQueue(int k) {
-        capacity = k;
-        queue = new int[k];
-        front = 0;
-        size = 0;
+        this.head=0;
+        this.size=0;
+        this.capacity=k;
+        this.data=new int[k];
     }
     public boolean enQueue(int value) {
-        if (isFull()) {
+        if(isFull()){
             return false;
         }
-        int insertIndex = (front + size) % capacity;
-        queue[insertIndex] = value;
+        int tail=(head+size)%capacity;
+        data[tail]=value;
         size++;
         return true;
     }
     public boolean deQueue() {
-        if (isEmpty()) {
+        if(isEmpty()){
             return false;
         }
-        front = (front + 1) % capacity;
+        head=(head+1)%capacity;
         size--;
         return true;
     }
+    
     public int Front() {
-        if (isEmpty()) {
+        if(isEmpty()){
             return -1;
         }
-        return queue[front];
+        return data[head];
     }
+    
     public int Rear() {
-        if (isEmpty()) {
+        if(isEmpty()){
             return -1;
         }
-        int rearIndex = (front + size - 1) % capacity;
-        return queue[rearIndex];
+        int tail=(head+size-1)%capacity;
+        return data[tail];
     }
+    
     public boolean isEmpty() {
-        return size == 0;
-    } 
+        return (size==0);
+    }
+    
     public boolean isFull() {
-        return size == capacity;
+        return (size==capacity);
     }
 }
+
